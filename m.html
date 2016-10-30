@@ -113,16 +113,16 @@
           });
       });
 
+      // my functionality
+      (function() {
+        $("a.next").click(function() {
+          console.log('here');
+          $('html, body').animate({
+              scrollTop: $(".poster").offset().top
+          }, 2000);
+        });
+      })()
     })
-    // // my functionality
-    // (function() {
-    //   $("a.next").click(function() {
-    //     console.log('here');
-    //     $('html, body').animate({
-    //         scrollTop: $(".poster").offset().top
-    //     }, 2000);
-    //   });
-    // })()
 </script>
 <div class="main-col">
     <section class="main">
