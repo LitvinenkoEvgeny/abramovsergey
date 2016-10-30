@@ -3451,7 +3451,7 @@ section.contacts {
 @media screen and (max-width: 1200px) {
   /* line 2932, pages.scss */
   aside.compact {
-    width: 200px !important; }
+    width: 200px; }
   /* line 2935, pages.scss */
   aside.ipad nav {
     margin: 33vh 0 0 0; }
