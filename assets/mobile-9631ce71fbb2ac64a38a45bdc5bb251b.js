@@ -1254,6 +1254,9 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
   };
 
 }).call(this);
+(function() {
+  console.log($);
+})()
 /*!
  * Fotorama 4.6.4 | http://fotorama.io/license/
  */

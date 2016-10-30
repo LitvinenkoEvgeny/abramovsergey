@@ -46,7 +46,8 @@ body {
     /* line 48, mobile.scss */
     .main-col section.main .logo {
       display: inline-block;
-      background: url(../logo.jpg) no-repeat;
+      background: url("https://pp.vk.me/c637219/v637219329/53b6/2IiBodF4d10.jpg") no-repeat;
+      /*background: url(../logo.jpg) no-repeat;*/
       background-size: cover;
       width: 44vw;
       height: 44vw;
@@ -104,7 +105,7 @@ body {
     -webkit-filter: drop-shadow(0 0 10px black); }
   /* line 107, mobile.scss */
   .main-col section.video .poster {
-    background: url(../mobile-video-back.jpg) no-repeat top center;
+    background: url(https://pp.vk.me/c637621/v637621329/eb98/bG1VxjSfqLo.jpg) no-repeat -260px 0px;
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -374,7 +375,8 @@ body {
     /* line 371, mobile.scss */
     .main-col section.contacts .logo {
       display: inline-block;
-      background: url(../logo.jpg) no-repeat;
+      background: url("https://pp.vk.me/c637219/v637219329/53b6/2IiBodF4d10.jpg") no-repeat;
+      /*background: url(../logo.jpg) no-repeat;*/
       background-size: cover;
       width: 44vw;
       height: 44vw;
@@ -560,7 +562,8 @@ body {
     /* line 542, mobile.scss */
     .forms-col section.contacts .logo {
       display: inline-block;
-      background: url(../logo.jpg) no-repeat;
+      background: url("https://pp.vk.me/c637219/v637219329/53b6/2IiBodF4d10.jpg") no-repeat;
+      /*background: url(../logo.jpg) no-repeat;*/
       background-size: cover;
       width: 35vw;
       height: 35vw;
