@@ -1254,9 +1254,21 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
   };
 
 }).call(this);
-(function() {
-  console.log($);
-})()
+// (function() {
+//       $(document).on('click', '#calendar tbody a', function(){
+//           if(($(this).hasClass('reserved')) || ($(this).hasClass('after'))){
+//               if($(this).hasClass('reserved')){
+//                   $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="other">'+$(this).next().children('.name').html()+'</span>');
+//                   $(".main-col section.calendar .reserve .button").addClass("disabled");
+//               }else{
+//                   $(".forms-col .calendar .date").html($(this).next().children('.date').html());
+//                   $(".forms-col .calendar #reserve_date").val($(this).next().children('.date').html());
+//                   $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
+//                   $(".main-col section.calendar .reserve .button").removeClass("disabled");
+//               }
+//           }
+//       });
+// })()
 /*!
  * Fotorama 4.6.4 | http://fotorama.io/license/
  */

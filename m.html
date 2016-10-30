@@ -100,6 +100,12 @@
                     $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
                     $(".main-col section.calendar .reserve .button").removeClass("disabled");
                 }
+            } else {
+              // new functionality remove if shit isn't working
+                $(".forms-col .calendar .date").html($(this).next().children('.date').html());
+                $(".forms-col .calendar #reserve_date").val($(this).next().children('.date').html());
+                $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
+                $(".main-col section.calendar .reserve .button").removeClass("disabled");
             }
         });
     });
