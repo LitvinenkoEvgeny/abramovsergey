@@ -15,100 +15,114 @@
 </head>
 <body class="mobile">
   <script>
-    $(function() {
-        $('.fotorama.photos')
-            .on('fotorama:showend',
-                function(e, fotorama, extra) {
-                    $("section.about .dots .dot:eq("+(fotorama.activeFrame.i-1)+")").addClass('active').siblings().removeClass('active');
-                }
-            ).fotorama({
-                spinner: {
-                    lines: 9,
-                    color: 'rgb(254, 255, 226)'
-                }
-            });
+    $(document).ready(function(){
+      $(function() {
+          $('.fotorama.photos')
+              .on('fotorama:showend',
+                  function(e, fotorama, extra) {
+                      $("section.about .dots .dot:eq("+(fotorama.activeFrame.i-1)+")").addClass('active').siblings().removeClass('active');
+                  }
+              ).fotorama({
+                  spinner: {
+                      lines: 9,
+                      color: 'rgb(254, 255, 226)'
+                  }
+              });
 
-        $('.fotorama.reviews')
-            .on('fotorama:showend',
-                function(e, fotorama, extra) {
-                    $("section.reviews .dots .dot:eq("+(fotorama.activeFrame.i-1)+")").addClass('active').siblings().removeClass('active');
-                }
-            ).fotorama({
-                spinner: {
-                    lines: 9,
-                    color: 'rgb(254, 255, 226)'
-                }
-            });
+          $('.fotorama.reviews')
+              .on('fotorama:showend',
+                  function(e, fotorama, extra) {
+                      $("section.reviews .dots .dot:eq("+(fotorama.activeFrame.i-1)+")").addClass('active').siblings().removeClass('active');
+                  }
+              ).fotorama({
+                  spinner: {
+                      lines: 9,
+                      color: 'rgb(254, 255, 226)'
+                  }
+              });
 
-        $("nav a.nav-link").click(function(){
-            var hash = $(this).attr('href');
-            hash = hash.slice(3);
-            var top = $("section."+hash+"").offset().top;
-            $('body').animate({scrollTop:top}, 600);
-            $('nav').removeClass('show');
+          $("nav a.nav-link").click(function(){
+              var hash = $(this).attr('href');
+              // Поменять на боевом сервере где не будет .html
+              // На hash.slice(3)
+              hash = hash.slice(7);
+              var top = $("section."+hash+"").offset().top;
+              $('body').animate({scrollTop:top}, 600);
+              $('nav').removeClass('show');
 
-        });
+          });
 
-        $('aside .menu').click(function(){
-            $(this).next().addClass('show');
-        });
-        $('aside .close').click(function(){
-            $(this).parent().removeClass('show');
-        });
+          $('aside .menu').click(function(){
+              $(this).next().addClass('show');
+          });
+          $('aside .close').click(function(){
+              $(this).parent().removeClass('show');
+          });
 
-        $('section.video .play').click(function(){
-            $(this).fadeOut(300);
-            $('section.video .poster').addClass('hide');
-            $('section.video video').get(0).play();
-        });
+          $('section.video .play').click(function(){
+              $(this).fadeOut(300);
+              $('section.video .poster').addClass('hide');
+              $('section.video video').get(0).play();
+          });
 
-        $('.main-col section.contacts .button').click(function(){
-            $(".main-col").addClass('hide');
-            $("aside .back").addClass('show');
-            $(".forms-col").addClass('show');
-            $(".forms-col section.contacts").addClass('show');
-        });
-        $('.main-col section.calendar .button').click(function(){
-            if($(this).hasClass('disabled')){
+          $('.main-col section.contacts .button').click(function(){
+              $(".main-col").addClass('hide');
+              $("aside .back").addClass('show');
+              $(".forms-col").addClass('show');
+              $(".forms-col section.contacts").addClass('show');
+          });
+          $('.main-col section.calendar .button').click(function(){
+              if($(this).hasClass('disabled')){
 
-            }else{
-                $(".main-col").addClass('hide');
-                $("aside .back").addClass('show');
-                $(".forms-col").addClass('show');
-                $(".forms-col section.calendar").addClass('show');
-            }
-        });
-        $('aside .back').click(function(){
-            $(".main-col").removeClass('hide');
-            $(this).removeClass('show');
-            $(".forms-col").removeClass('show');
-            setTimeout(function(){
-                $(".forms-col section").removeClass('show');
-            },300);
+              }else{
+                  $(".main-col").addClass('hide');
+                  $("aside .back").addClass('show');
+                  $(".forms-col").addClass('show');
+                  $(".forms-col section.calendar").addClass('show');
+              }
+          });
+          $('aside .back').click(function(){
+              $(".main-col").removeClass('hide');
+              $(this).removeClass('show');
+              $(".forms-col").removeClass('show');
+              setTimeout(function(){
+                  $(".forms-col section").removeClass('show');
+              },300);
 
-        });
+          });
 
-        //section.calendar
-        $(document).on('click', '#calendar tbody a', function(){
-            if(($(this).hasClass('reserved')) || ($(this).hasClass('after'))){
-                if($(this).hasClass('reserved')){
-                    $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="other">'+$(this).next().children('.name').html()+'</span>');
-                    $(".main-col section.calendar .reserve .button").addClass("disabled");
-                }else{
-                    $(".forms-col .calendar .date").html($(this).next().children('.date').html());
-                    $(".forms-col .calendar #reserve_date").val($(this).next().children('.date').html());
-                    $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
-                    $(".main-col section.calendar .reserve .button").removeClass("disabled");
-                }
-            } else {
-              // new functionality remove if shit isn't working
-                $(".forms-col .calendar .date").html($(this).next().children('.date').html());
-                $(".forms-col .calendar #reserve_date").val($(this).next().children('.date').html());
-                $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
-                $(".main-col section.calendar .reserve .button").removeClass("disabled");
-            }
-        });
-    });
+          //section.calendar
+          $(document).on('click', '#calendar tbody a', function(){
+              if(($(this).hasClass('reserved')) || ($(this).hasClass('after'))){
+                  if($(this).hasClass('reserved')){
+                      $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="other">'+$(this).next().children('.name').html()+'</span>');
+                      $(".main-col section.calendar .reserve .button").addClass("disabled");
+                  }else{
+                      $(".forms-col .calendar .date").html($(this).next().children('.date').html());
+                      $(".forms-col .calendar #reserve_date").val($(this).next().children('.date').html());
+                      $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
+                      $(".main-col section.calendar .reserve .button").removeClass("disabled");
+                  }
+              } else {
+                // new functionality remove if shit isn't working
+                  $(".forms-col .calendar .date").html($(this).next().children('.date').html());
+                  $(".forms-col .calendar #reserve_date").val($(this).next().children('.date').html());
+                  $(".main-col section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
+                  $(".main-col section.calendar .reserve .button").removeClass("disabled");
+              }
+          });
+      });
+
+    })
+    // // my functionality
+    // (function() {
+    //   $("a.next").click(function() {
+    //     console.log('here');
+    //     $('html, body').animate({
+    //         scrollTop: $(".poster").offset().top
+    //     }, 2000);
+    //   });
+    // })()
 </script>
 <div class="main-col">
     <section class="main">
