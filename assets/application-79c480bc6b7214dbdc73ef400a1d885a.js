@@ -2364,6 +2364,9 @@ $(function(){
 					$("#photo-reviews .handle").css('transition','0').css('transform','translateX(0)').css('transition','11s').css('transform','translateX(-'+translateX+'px)');
 					setTimeout(function(){
 						$("#photo-reviews .handle").css('transition','');
+            // change here
+            // value x
+            // what it means ?
 						photoReviewsDragdealer = new Dragdealer('photo-reviews', {
 							speed: 0.4,
 							x:1
@@ -2373,7 +2376,7 @@ $(function(){
 				}else{
 					photoReviewsDragdealer.setValue(0,0,true);
 					photoReviewsDragdealer.options.speed=0.05;
-					photoReviewsDragdealer.setValue(1,0);
+					photoReviewsDragdealer.setValue(0,0);
 					setTimeout(function(){
 						photoReviewsDragdealer.options.speed=0.4;
 					},3000);
