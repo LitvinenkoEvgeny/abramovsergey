@@ -2826,15 +2826,26 @@ $(function(){
 			    $("#show-album").removeClass('hidden').children('.handle').html(html);
 			    setTimeout(function(){
 			    	fullWidth = 0;
-			    	$("#show-album .handle img").each(function(){
+			    	$("#show-album .handle img").each(function(i, item){
               // console.log('Ширина картинки, если > 0 значит все должно быть ок: ' + $(this).width());
-              $(this).attr('width', $(this).width() + 'px');
+              // $(this).on('load', function () {
+              //   console.log('here');
+              //   $(this).attr('width', $(this).width() + 'px');
+              // })
               // console.log($(this).attr('width'));
 						fullWidth += $(this).width();
 			    	});
+            
 			    	$("#show-album .handle").width(fullWidth);
 		    		showAlbumDragdealer.reflow();
 		    		console.log('Album reflow');
+
+			    	$("#show-album .handle img").each(function(i, item){
+              // console.log('Ширина картинки, если > 0 значит все должно быть ок: ' + $(this).width());
+              $(this).attr('width', $(this).width() + 'px');
+              // console.log($(this).attr('width'));
+			    	});
+            console.log('set image sizes');
 		    	},2000);
 		    }
 		});
