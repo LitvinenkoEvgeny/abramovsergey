@@ -2815,7 +2815,7 @@ $(function(){
 	$(".get-photos").click(function(){
 		console.log("Get photos");
 		$.ajax({
-		    url: "/abramovsergey/album/"+$(this).attr('rel')+'/',
+		    url: "album/"+$(this).attr('rel')+'/',
         xhrFields: {
           withCredentials: true
         },
