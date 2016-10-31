@@ -2845,7 +2845,7 @@ $(function(){
               $(this).attr('width', $(this).width() + 'px');
               // console.log($(this).attr('width'));
 			    	});
-            console.log('версия 1');
+            console.log('версия 2');
 		    	},2000);
 		    }
 		});
