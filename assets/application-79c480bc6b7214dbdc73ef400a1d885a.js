@@ -2269,8 +2269,8 @@ $(function(){
 	// 	}
 	// }
 	// $("#video-start").each(function(){
-	// 	interval_id = setInterval(checkLoad,300);			
-	// });	
+	// 	interval_id = setInterval(checkLoad,300);
+	// });
 
   //track preload bg video
   if($("#video-start").length > 0){
@@ -2279,7 +2279,7 @@ $(function(){
 	  videoLoadFlag = false,
 	  timeUpdate = function(e){
 	  	console.log(percentLoad);
-	    percentLoad = (videoBg.buffered.end(0)/videoBg.duration) * 100;       
+	    percentLoad = (videoBg.buffered.end(0)/videoBg.duration) * 100;
 	    if(percentLoad > 90 && videoLoadFlag == false){
 	      videoBg.currentTime = 0;
 	      videoLoadFlag=true;
@@ -2287,7 +2287,7 @@ $(function(){
 	      videoBg.removeEventListener('timeupdate', timeUpdate, false);
 	    }
 	  };
-	  
+
 	  videoBg.play();
 
 	  videoBg.addEventListener('timeupdate', timeUpdate, false);
@@ -2296,7 +2296,7 @@ $(function(){
 	  setTimeout(function(){
 	    videoLoadFlag=true;
 	    $(".preloader").fadeOut(300);
-	  },10000);  	
+	  },10000);
   }
 
 	//check hash to navigation
@@ -2367,7 +2367,7 @@ $(function(){
 						photoReviewsDragdealer = new Dragdealer('photo-reviews', {
 							speed: 0.4,
 							x:1
-						});					
+						});
 						setTextReviews = true;
 					},11000);
 				}else{
@@ -2377,7 +2377,7 @@ $(function(){
 					setTimeout(function(){
 						photoReviewsDragdealer.options.speed=0.4;
 					},3000);
-				}		
+				}
 				setTimeout(function(){
 					$(".reviews .text-reviews").width($("body").width()-$("aside").width()-parseInt($(".reviews .about").css('width'))-$(".reviews .add").width());
 					textReviewsDragdealer.reflow();
@@ -2442,7 +2442,7 @@ $(function(){
 		    	scrollLastSecond = true;
 		    	setTimeout(refreshScrollLastSecond,1000);
 		    }
-		}	    
+		}
 	});
 	$("section.first").swipe( {
 		swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -2638,7 +2638,7 @@ $(function(){
 			    setTimeout(refreshScrollLastSecond,1000);
 		    }
 		}
-	});	
+	});
 
 	//video resize
 	/*function videoResize(){
@@ -2667,7 +2667,7 @@ $(function(){
 	        opacity = (100 - (sliderValue+1)*4)/100;
 	        $("#slider .ui-slider-handle").css('opacity',opacity);
 	        circleEq = Math.floor((sliderValue-1)*0.6)-1;
-        	$("#hint-ring-line circle:gt("+circleEq+")").css('fill-opacity','1');		        
+        	$("#hint-ring-line circle:gt("+circleEq+")").css('fill-opacity','1');
 		}else{
 			$("#video-start").show();
 			$("#hint-ring-line circle").css('fill-opacity','1');
@@ -2704,9 +2704,9 @@ $(function(){
         	}*/
         	$(".frames").fadeOut(10);
         	$("#video-finish").show().get(0).play();
-        	setTimeout(function(){$("#video-finish").addClass('scaled');},3000);        		
+        	setTimeout(function(){$("#video-finish").addClass('scaled');},3000);
         	if($("section.start").hasClass('ipad')){
-        		setTimeout(function(){$("section.first").show().css('opacity','1').addClass('first-animated');},500);        			
+        		setTimeout(function(){$("section.first").show().css('opacity','1').addClass('first-animated');},500);
         		setTimeout(typeText(0),1000);
         	}else{
         		$("section.first").show().css('opacity','1').addClass('first-animated');
@@ -2741,7 +2741,7 @@ $(function(){
 		}else{
 			$("#video-finish").get(0).currentTime=3.01;
 	  		$("#video-finish").get(0).play();
-		}		  
+		}
 	});
 
 	// flying text
@@ -2777,12 +2777,12 @@ $(function(){
 				setTimeout(function(){
 					typeText(i+1);
 				},100);
-			}			
+			}
 		}else{
 			setTimeout(function(){
 				$(".now-me").addClass('hidden');
 				location.hash='#about';
-			},500);			
+			},500);
 		}
 	}
 
@@ -2805,14 +2805,14 @@ $(function(){
 	});
 
 	//section.photo
-	
+
 
 	//section.weddings
 	slide = 0;
 	$(".get-photos").click(function(){
 		console.log("Get photos");
 		$.ajax({
-		    url: "/album/"+$(this).attr('rel'),
+		    url: "/abramovsergey/album/"+$(this).attr('rel'),
 		    cache: true,
 		    success: function(html){
 		    	$(".close-album").add("#show-album-grad").removeClass('hidden');
@@ -2886,7 +2886,7 @@ $(function(){
 	});
 
 	//section.reviews
-	setTextReviews = false;	
+	setTextReviews = false;
 	setTimeout(function(){
 		$(".reviews .text-reviews").width($("body").width()-$("aside").width()-parseInt($(".reviews .about").css('width'))-$(".reviews .add").width());
 
@@ -2922,7 +2922,7 @@ $(function(){
 				$("section.calendar .reserve .text").html($(this).next().children('.date').html()+'<br><span class="free">Дата свободна!</span>');
 				$("section.calendar .reserve .button").removeClass("disabled");
 				$("#new_reserve").addClass('show').children('#reserve_date').val($(this).next().children('.date').html().trim());
-			}			
+			}
 		}
 	});
 	$("section.calendar .reserve .button").click(function(){
@@ -2940,7 +2940,7 @@ $(function(){
 			$(this).after('<div class="loader"></div>');
 		}else{
 			$("#reserve_who").add("#reserve_contacts").addClass('error');
-		}		
+		}
 	});
 
 	//section.contacts
@@ -2958,7 +2958,7 @@ $(function(){
 			//return true;
 		}else{
 			return false;
-		}		
+		}
 	});
 
 	//admin UI
