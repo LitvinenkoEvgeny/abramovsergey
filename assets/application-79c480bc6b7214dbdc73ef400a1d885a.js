@@ -2828,7 +2828,7 @@ $(function(){
 			    	fullWidth = 0;
 			    	$("#show-album .handle img").each(function(){
               // console.log('Ширина картинки, если > 0 значит все должно быть ок: ' + $(this).width());
-              $(this).attr('width', $(this).width());
+              $(this).attr('width', $(this).width() + 'px');
               // console.log($(this).attr('width'));
 						fullWidth += $(this).width();
 			    	});
