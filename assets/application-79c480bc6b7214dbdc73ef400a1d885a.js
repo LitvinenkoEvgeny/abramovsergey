@@ -2835,7 +2835,7 @@ $(function(){
               // console.log($(this).attr('width'));
 						fullWidth += $(this).width();
 			    	});
-            
+
 			    	$("#show-album .handle").width(fullWidth);
 		    		showAlbumDragdealer.reflow();
 		    		console.log('Album reflow');
@@ -2845,7 +2845,7 @@ $(function(){
               $(this).attr('width', $(this).width() + 'px');
               // console.log($(this).attr('width'));
 			    	});
-            console.log('set image sizes');
+            console.log('версия 1');
 		    	},2000);
 		    }
 		});
