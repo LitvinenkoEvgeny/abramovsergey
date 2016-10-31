@@ -13,8 +13,8 @@ $("#show-review").removeClass('hidden').children('.handle').html([
   		'<a class="prev" data-remote="true" href="/reviews/105"></a>',
   		'<a class="next" data-remote="true" href="/reviews/2"></a>',
   	'</div>',
-		'<img alt="" class="photo" src="/reviews/1/1.jpg">',
+		'<img alt="" class="photo" src="reviews/1/1.jpg">',
   	'<p class="text">Любой текст</p>',
-  	'<p class="date"><img src="/date.svg">06 сентября 2015</p>',
+  	'<p class="date"><img src="date.svg">06 сентября 2015</p>',
   '</div>'
 ].join('\n'));
