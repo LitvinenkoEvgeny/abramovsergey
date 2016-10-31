@@ -2812,7 +2812,10 @@ $(function(){
 	$(".get-photos").click(function(){
 		console.log("Get photos");
 		$.ajax({
-		    url: "https://litvinenkoevgeny.github.io/abramovsergey/album/"+$(this).attr('rel')+'/',
+		    url: "/abramovsergey/album/"+$(this).attr('rel')+'/',
+        xhrFields: {
+          withCredentials: true
+        },
 		    cache: true,
 		    success: function(html){
 		    	$(".close-album").add("#show-album-grad").removeClass('hidden');
